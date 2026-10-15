@@ -1,0 +1,54 @@
+:root {
+  --bg: #f5f3fa;
+  --card: #ffffff;
+  --text: #1f1a2e;
+  --muted: #7a7390;
+  --accent: #6b3fa0;
+  --border: #e3dfee;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15121d;
+    --card: #1f1a2b;
+    --text: #ece8f5;
+    --muted: #9a92b0;
+    --accent: #b48ae6;
+    --border: #2f2840;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 16px/1.4 system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+.app { max-width: 480px; margin: 0 auto; padding: 24px 16px; }
+header { display: flex; justify-content: space-between; align-items: baseline; }
+h1 { margin: 0 0 16px; color: var(--accent); }
+.user { color: var(--muted); font-size: 14px; margin: 0; }
+form { display: flex; gap: 8px; }
+input[type=text] {
+  flex: 1; padding: 12px; font-size: 16px;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--card); color: var(--text);
+}
+button {
+  padding: 10px 14px; font-size: 15px; border: 0; border-radius: 8px;
+  background: var(--accent); color: #fff; cursor: pointer;
+}
+.filters { display: flex; gap: 6px; margin: 16px 0 8px; }
+.filters button { background: transparent; color: var(--muted); border: 1px solid var(--border); padding: 6px 12px; }
+.filters button.active { color: var(--accent); border-color: var(--accent); }
+ul { list-style: none; padding: 0; margin: 0; }
+li {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px; margin-bottom: 6px;
+}
+li input { width: 20px; height: 20px; accent-color: var(--accent); }
+li span { flex: 1; word-break: break-word; }
+li.done span { text-decoration: line-through; color: var(--muted); }
+li .delete { background: transparent; color: var(--muted); padding: 4px 8px; font-size: 18px; }
+footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; color: var(--muted); font-size: 14px; }
+footer button { background: transparent; color: var(--muted); padding: 4px 0; }

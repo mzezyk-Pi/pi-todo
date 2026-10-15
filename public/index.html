@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://sdk.minepi.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://socialchain.app https://backend.appstudio-u7cm9zhmha0ruwv8.piappengine.com; object-src 'none'; base-uri 'self'">
+  <title>Pi To-Do</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>To-Do</h1>
+      <p id="user" class="user">Not signed in</p>
+    </header>
+
+    <form id="new-todo" autocomplete="off">
+      <input id="todo-text" type="text" placeholder="What needs doing?" maxlength="200" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <nav class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="done">Done</button>
+    </nav>
+
+    <ul id="list"></ul>
+
+    <footer>
+      <span id="count">0 items left</span>
+      <button id="clear-done">Clear done</button>
+    </footer>
+  </main>
+  <script src="pi-auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
